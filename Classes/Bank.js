@@ -14,7 +14,7 @@ class Bank extends Payment {
             throw new ReferenceError("You have not entered a string of numbers")
         } else {
             await new Promise(resolve => setTimeout(resolve, 3000)); // wait 3 seconds
-            console.log("Card details entered"); //could import user here 
+            console.log("Card details entered"); 
         }
 
 

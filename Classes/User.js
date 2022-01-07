@@ -1,4 +1,5 @@
 const Guest = require('./Guest');
+const Scooter = require('./Scooter');
 // const Payment = require('./Payment');
 const prompt = require('prompt-sync')();
 
@@ -14,22 +15,26 @@ class User extends Guest {
     }
 
     hireScooter(){ // execute a function that start counting seconds until they return scooter || seaarch js apply
+// pass in scooter 
+// return scooter.set.isavailable
+// return scooter
+    }
+
+    returnScooter(){ //pass in take payment
 
     }
 
-    returnScooter(){ //take payment
-
-    }
     deleteAccount(name){
         this.register.pop(name);
         console.log(`${this.name} has been removed`);
+        return this.register;
 
     }
     
     async submitFeedback(){
         const review = prompt(`Hi There ${this.name}, please leave some feedback so i can better develop my js code ;)`);
         await new Promise(resolve => setTimeout(resolve, 3000)); 
-        console.log("Review submitted! Thank you")
+        console.log("Review submitted! Thank you");
     }
 
 }
