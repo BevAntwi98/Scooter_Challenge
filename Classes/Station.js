@@ -9,6 +9,7 @@ class Station {
     }
 
     chargeScooter(){ //function to charge scooter. maybe add async / loading func
+        
 
     }
 

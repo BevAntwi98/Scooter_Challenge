@@ -11,7 +11,7 @@ class Guest {
         this.age = age;
         this.address = address;
         this.email = email;
-        this.register= [];
+        this.register = [];
     }
 
     verifyAge() {  //verify age before proceeding to finishing signUp
@@ -25,12 +25,12 @@ class Guest {
     }
 
     signUp(name) {
-         this.register.push(name);
+        this.register.push(name);
         //  console.log(`${this.name} has registered successfully. you can now start using the app`)     
     }
-    
-    // ask for help!!!!!!!!!!!
-   viewGuests(){
+
+
+    viewGuests() {
         console.log(this.register);
     }
 }
@@ -38,15 +38,15 @@ class Guest {
 module.exports = Guest;
 
 
-const A = new Guest("Bev", 24, "64 zoo lane", "a@hotmail.com");
-A.verifyAge()
+// const A = new Guest("Bev", 24, "64 zoo lane", "a@hotmail.com");
+// A.verifyAge()
 
-const b = new Guest("toni",16, "251 southwark", "t@t.com")
-const c = new Guest("abi",56, "251 southwark", "t@t.com")
-c.verifyAge()
+// const b = new Guest("toni",16, "251 southwark", "t@t.com")
+// const c = new Guest("abi",56, "251 southwark", "t@t.com")
+// c.verifyAge()
 
-A.viewGuests()
-b.verifyAge()
-c.viewGuests()
+// A.viewGuests()
+// b.verifyAge()
+// c.viewGuests()
 
 

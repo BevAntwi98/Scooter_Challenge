@@ -1,31 +1,33 @@
-const prompt = require('prompt-sync')();
+
 class Payment {
 
     name;
+    type;
 
-    constructor(name) {
+    constructor(name, type) {
         this.name = name;
+        this.type = type;
 
     }
 
     async verifyBankDetails() { //timeout function
         const cardNum = prompt('What is your card number?');
-        await new Promise(resolve => setTimeout(resolve, 3000)); // wait 3 seconds
-        console.log("Card details entered"); //could import user here 
+        if (isNaN(cardNum)) {
+            throw new ReferenceError("You have not entered a string of numbers")
+        } else {
+            await new Promise(resolve => setTimeout(resolve, 3000)); // wait 3 seconds
+            console.log("Card details entered");
+        }
+    };
 
-    }
-
-    async takePayment() { //when user return scooter to charging station
-        console.log("Calculating payment....");
-        await new Promise(resolve => setTimeout(resolve, 3000));
-        console.log("Thank you! A payment of ### has been taken :D ");  // implement function to calculate how much has been taken
-    }
+    takePayment() { //when user return scooter to charging station
+        //abstract
+        console.log("a");
+    };
 
 
 
 }
+
 module.exports = Payment
 
-const p = new Payment();
-// p.verifyBankDetails()
-p.takePayment()
