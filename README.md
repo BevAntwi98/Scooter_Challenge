@@ -32,7 +32,7 @@ Commit your code into Github and share the link with your coach for review.
 
 ## Notes for coach :)
 ### This project is around 90 ish % complete, had around 2 tests and a couple functions to fix in User.js. 
-* I also attached images of the failed tests
+* I also attached images of the failed tests in the Report Folder
 
 ## Authors
 * Beverly Antwi-Agyei - [BevAntwi98](https://github.com/BevAntwi98)

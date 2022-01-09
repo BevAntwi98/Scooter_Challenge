@@ -66,19 +66,19 @@ module.exports = User
 
 
 // TESTING MY CODE
-// const A = new User("bev", 22, "64 zoo lane", "a@A.com", 111)
-// const e = new User("ww", 22, "64 zoo lane", "a@A.com", 111)
-// const c = new User("ee", 22, "64 zoo lane", "a@A.com", 111)
-// const d = new User("rr", 22, "64 zoo lane", "a@A.com", 111)
+const A = new User("bev", 22, "64 zoo lane", "a@A.com", 111)
+const e = new User("ww", 22, "64 zoo lane", "a@A.com", 111)
+const c = new User("ee", 22, "64 zoo lane", "a@A.com", 111)
+const d = new User("rr", 22, "64 zoo lane", "a@A.com", 111)
 // // A.submitFeedback()
 
-// const s = new Scooter(1, "electric", 100, 32); //if a scooter object is created with less than 100% then isAvailable() method will console.log error
+const s = new Scooter(1, "electric", 100, 32); //if a scooter object is created with less than 100% then isAvailable() method will console.log error
 // // A.hireScooter()
 
-// const g = new GooglePay("Scooter Hire", "GooglePay");
+const g = new GooglePay("Scooter Hire", "GooglePay");
 
-// const p = new Payment("payment", "payment");
+const p = new Payment("payment", "payment");
 
-// const st = new Station("station1");
+const st = new Station("station1");
 // A.returnScooter();
 

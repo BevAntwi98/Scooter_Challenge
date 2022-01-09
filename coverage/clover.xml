@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1641764843412" clover="3.2.0">
-  <project timestamp="1641764843412" name="All files">
+<coverage generated="1641766376059" clover="3.2.0">
+  <project timestamp="1641766376059" name="All files">
     <metrics statements="98" coveredstatements="97" conditionals="8" coveredconditionals="7" methods="30" coveredmethods="29" elements="136" coveredelements="133" complexity="0" loc="98" ncloc="98" packages="1" files="8" classes="8"/>
     <file name="Bank.js" path="C:\Users\b.antwi-agyei\OneDrive - Playtech\Documents\Scooter_Challenge\Classes\Bank.js">
       <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
@@ -108,21 +108,21 @@
       <line num="38" count="1" type="stmt"/>
       <line num="40" count="1" type="stmt"/>
       <line num="43" count="1" type="stmt"/>
-      <line num="46" count="1" type="stmt"/>
-      <line num="52" count="1" type="stmt"/>
-      <line num="53" count="1" type="stmt"/>
-      <line num="54" count="1" type="stmt"/>
-      <line num="61" count="1" type="stmt"/>
-      <line num="62" count="1" type="stmt"/>
+      <line num="44" count="1" type="stmt"/>
+      <line num="48" count="1" type="stmt"/>
+      <line num="49" count="1" type="stmt"/>
+      <line num="50" count="1" type="stmt"/>
+      <line num="55" count="1" type="stmt"/>
+      <line num="56" count="1" type="stmt"/>
+      <line num="65" count="1" type="stmt"/>
       <line num="69" count="1" type="stmt"/>
-      <line num="73" count="1" type="stmt"/>
-      <line num="74" count="1" type="stmt"/>
+      <line num="70" count="1" type="stmt"/>
+      <line num="71" count="1" type="stmt"/>
+      <line num="72" count="1" type="stmt"/>
       <line num="75" count="1" type="stmt"/>
-      <line num="76" count="1" type="stmt"/>
-      <line num="79" count="1" type="stmt"/>
+      <line num="78" count="1" type="stmt"/>
+      <line num="80" count="1" type="stmt"/>
       <line num="82" count="1" type="stmt"/>
-      <line num="84" count="1" type="stmt"/>
-      <line num="86" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
