@@ -15,7 +15,7 @@
 ## Assignment
 To complete the assignment you must create the following:
 
-~Design your solution by creating the following UML diagrams~
+Design your solution by creating the following UML diagrams
 
 * A UML Use Case diagram showing the interactions between the user Actor, scooter Actor and the Electric Scooter Hire app system
 * A UML Class diagram showing the system's classes, their attributes, methods and inter-relationships
