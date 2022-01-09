@@ -16,11 +16,11 @@ class Guest {
 
     verifyAge() {  //verify age before proceeding to finishing signUp
         if (this.age < 18) {
-            console.log(`Sorry ${this.name}, you are too young to use this service.`); //change to boolean
-            return this.age;
+            // console.log(`Sorry ${this.name}, you are too young to use this service.`); //change to boolean
+            return this.age=false;
         }
         else {
-            return this.signUp(this.name);
+            return this.signUp(this.name); //if of age, user will be signed up via signUp method
         }
     }
 
@@ -30,14 +30,14 @@ class Guest {
     }
 
 
-    viewGuests() {
-        console.log(this.register);
-    }
+    // viewGuests() {
+    //     console.log(this.register);
+    // }
 }
 
 module.exports = Guest;
 
-
+// // TESTING MY CODE
 // const A = new Guest("Bev", 24, "64 zoo lane", "a@hotmail.com");
 // A.verifyAge()
 

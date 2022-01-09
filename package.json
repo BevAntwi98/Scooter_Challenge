@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "test:report": "jest --coverage=true"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "jest": "^27.4.7",
     "prompt-sync": "^4.2.0"
   }
 }
