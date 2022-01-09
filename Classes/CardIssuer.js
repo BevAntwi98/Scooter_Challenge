@@ -9,7 +9,7 @@ class CardIssuer extends Payment {
     }
 
 
-    async takePayment() {
+    async takePayment() { //overriding
         console.log("Calculating payment from your card....");
         await new Promise(resolve => setTimeout(resolve, 3000)); // wait 3 seconds
         console.log("Thank you! A payment of ### has been taken :D ");  // implement function to calculate how much has been taken
