@@ -1,0 +1,69 @@
+@startuml
+
+title Electric Scooter Use Case Diagram
+left to right direction
+
+actor "Guest" as Z
+actor "User" as A
+actor "Scooter" as B
+actor "CardIssuer" as C
+actor "PayPal" as D
+actor "GooglePay" as E
+actor "CustomerService" as F
+actor "Maintenence" as G
+
+
+rectangle System {
+    usecase "Sign Up" as UC0
+    usecase "Launch App" as UC1
+    usecase "Create an account" as UC2
+    usecase "Verify user's age" as UC3
+    usecase "Enter bank details" as UC4
+    usecase "Enter address" as UC5
+    usecase "Rent Scooter" as UC6
+    usecase "Return Scooter" as UC7
+    usecase "Take Payment" as UC8
+    usecase "Report Scooter as broken" as UC9
+    usecase "Customer Service" as UC12
+    usecase "Broken Scooters" as UC13
+}
+
+rectangle Charging_Station {
+    usecase "Charge Scooter" as UC10
+    usecase "Lock/Unlock" as UC11
+}
+
+Z --> UC0
+A --> UC1
+A --> UC2
+A --> UC3
+A --> UC4
+A --> UC5
+A --> UC6
+A --> UC7
+A --> UC8
+A --> UC9
+A<|--Z
+B --> UC10
+B --> UC11
+
+UC6 --> B #blue;line.dashed;text:blue 
+UC7 --> B #blue;line.dashed;text:blue 
+UC8 --> C #green;line.dashed;text:green
+UC8 --> D #green;line.dashed;text:green
+UC8 --> E #green;line.dashed;text:green
+UC9 --> F #line:red;line.bold;text:red 
+UC12 --> F #line:red;line.bold;text:red 
+UC13 --> G #line:red;line.bold;text:red 
+
+
+note right of (C)
+ Once the user's banking details 
+ have been verified, then
+ payment can be withdrawn
+end note
+
+
+
+
+@enduml

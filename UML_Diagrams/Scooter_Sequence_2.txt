@@ -1,0 +1,51 @@
+actor User
+actor Scooter #lightblue
+actor Maintenence #lightgreen
+
+
+User ->App_UI: Launch App
+User -> App_UI: Enter postcode
+User -> App_UI: Click "Search" for charging stations in area
+App_UI -> App_API: Locate charging stations within certain radius
+App_API -> Database: Send request to collect charging station data
+Database --> App_API: Confirm request
+App_API --> App_UI: Load page with results
+App_UI --> User: View list of charging stations
+User -> App_UI: Select a Scooter
+App_UI -> App_API: Reserve chosen Scooter for 10min
+
+
+
+App_API -> Database: Logs chosen Scooter and request activation code 
+Database --> App_API: Logging and request confirmed
+App_API --> App_UI: Return activation code for selected scooter
+App_UI --> User: Return activation scan code for selected scooter
+
+alt  #Pink Reservation Timeout 
+    App_UI -> User: Reservation has exceeded time limit
+    App_UI-> App_API: Cancel reservation on selected scooter
+    App_API-> Database: Log cancellation
+    Database -> Database: Scooter Cancelled
+    Database ->App_API: Scooter reservation cancelled
+    App_API -> App_UI: Scooter reservation cancelled
+    App_UI --> User: Select a Scooter
+   
+    User<- User: Restart Scooter selection process
+end
+ note right: This occurs when the user fails \nto enter the code for the scooter within  \nthe time period
+
+User -> Scooter: Enter code/Scan QR code 
+Scooter -> App_UI: Activate Scooter
+App_UI --> Scooter: Start Session
+Scooter --> User: Start Session
+alt  #B4A7E5 Broken Scooter 
+    User --> App_UI: Start Session
+    User --> App_UI: Report Broken Scooter to Customer Service
+    App_UI-->App_API: Send request to remove Scooter from list
+    App_API--> Database: Confirm request and log broken scooter info
+    Database-->App_API: Remove Scooter from list of available scooters
+    App_API->App_UI:Remove Scooter
+    App_UI->Maintenence: Report Broken scooter
+ 
+end
+@enduml

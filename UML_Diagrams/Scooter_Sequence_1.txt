@@ -1,0 +1,58 @@
+@startuml
+
+title "Electric Scooter Hire Successful Sign Up"
+
+actor Guest
+actor User #lightblue
+actor Scooter #lightgreen
+
+Guest -> App_UI: Request sign up
+activate App_UI
+App_UI --> Guest: Prompt user for proof of age
+deactivate App_UI
+Guest -> App_UI: Submit evidence 
+activate App_UI
+App_UI -> App_API: Verify guest's ID
+deactivate App_UI
+activate App_API
+
+alt  #Pink  Verification Failiure -Age
+    App_API -> App_UI: Verification rejected
+    App_UI -\\ Guest: Verification rejected
+    destroy Guest
+else #B4A7E5 Verification Failiure-ID
+    App_API -> App_UI: Verification rejected
+    App_UI -> Guest: Verification rejected
+    Guest<- Guest: Use another verified form of ID (passport etc)
+    Guest->App_UI: Restart signing up process
+end
+note right: This could be due to Guest's age \nor invalid documentation
+
+activate App_API
+
+App_API -->App_UI: ID VERIFIED!
+
+deactivate App_API
+activate App_UI
+App_UI --> Guest: ID VERIFIED!
+deactivate App_UI
+Guest -> App_UI: Enter details
+activate App_UI
+App_UI -> App_API:createAccount( username, password)
+deactivate App_UI
+activate App_API
+App_API -> Account: create new Account
+activate Account
+Account -> Database: save (account)
+activate Database
+Database --> Account
+deactivate Database
+Account -->App_API
+deactivate Account
+App_API --> App_UI
+deactivate App_API
+activate App_UI
+App_UI --> User: SIGNUP SUCCESSFUL
+deactivate App_UI
+
+@enduml

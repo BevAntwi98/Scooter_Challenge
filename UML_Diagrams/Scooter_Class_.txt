@@ -1,0 +1,95 @@
+@startuml
+
+title Electric Scooter - Class Diagram
+
+class Hire_App{
+
+..Encrypted..
+#profilePassword:String
+..Methods..
+verifyAge()
+approved()
+
+}
+
+class Guest{
+..Properties..
+-name: string
+-age: number
+-address: string
+-email: string
+..Methods..
+signUp()
+}
+
+class User {
+
+..Properties..
+-name: string
+-age: number
+-address: string
+-email: string
+-unique_id: number
+..Methods..
+-hireScooter()
++returnScooter()
+-deleteAccount()
++submitFeedback()
+}
+
+abstract Charging_Station{
+..Properties..
+Scooters: Array
+..Methods..
+chargeScooter()
+}
+
+class Scooter {
+ ..Properties..
+ id: number
+ type: string
+ model: string
+ chargePercentage: number
+ maxRange: 32
+ ..Methods..
++ isDamaged()
+ +isAvailable()
+}
+
+class Payment{
+..Properties..
+name: string
+
+..Methods..
+verifyBankDetails()
+takePayment()
+
+}
+class GooglePay{
+..Methods..
+takePayment()
+
+}
+class Bank{
+..Methods..
+takePayment()
+}
+class CardIssuer{
+..Methods..
+takePayment()
+}
+
+
+
+Hire_App "1" -- "many" User 
+User "1" --> "1" Scooter: can use
+Scooter "1" --> "many" Charging_Station: can be dropped off at
+
+Charging_Station --Scooter
+Guest <|-- User
+Payment<|--GooglePay
+Payment<|--Bank
+Payment<|--CardIssuer
+
+Hire_App -- Payment
+@enduml
