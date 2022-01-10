@@ -15,7 +15,7 @@ class Scooter {
     }
 
     isDamaged() {
-        console.log("report to maintenence");
+        console.log("Report to maintenence");
         return this.damage = true;
     }
 
@@ -26,7 +26,7 @@ class Scooter {
 
 
         //    error in case its not available
-        if (this.chargePercentage !== 100 || this.maxRange !== 32) {
+        if (this.chargePercentage !== 100 ) {
             let a = console.log("This bike is not ready to use");
             return a;
         }
