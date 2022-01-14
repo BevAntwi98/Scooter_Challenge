@@ -30,10 +30,12 @@ Implement your system as follows:
 * A screenshot of your unit test coverage report (aim for 100% coverage)
 Commit your code into Github and share the link with your coach for review.
 
-## Notes for coach :)
+## Updated Notes for coach :)
 
-This project is around 98 ish % complete, had around 2 tests and a couple functions to fix in User.js. 
-* I also attached images of the failed tests in the Report Folder
+Fixed the UML Diagrams, classes (User&Guest) and some of the tests too :)
+I also added an Account class to keep in line with the Class Diagram I amended! Currently going through
+TypeScript online so once I get a good grasp I'll update the files for them and add another message here :D
+* I also attached an image of the updated tests in the Report Folder. 
 
 ## Authors
 * Beverly Antwi-Agyei - [BevAntwi98](https://github.com/BevAntwi98)

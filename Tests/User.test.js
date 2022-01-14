@@ -8,17 +8,18 @@ describe('User', function () { //TO FIX
 
     // see if user can hire scooter
     test('User can hire scooter', () => {
-        const u = new User("bev", 24, "b@b.com", Math.random());
-        let a = u.hireScooter();
-        expect(a).toBeUndefined();
+         u = new User("bev", 24, "b@b.com", Math.random());
+         s = new Scooter(1,"Electric",100,32);
+        expect(u.hireScooter(s)).toBeTruthy();
     });
 
     // see if user can hire scooter if scooter is less than 100
     test('User cannot hire scooter', () => {
         const u = new User("bev", 24, "b@b.com", Math.random());
         const s = new Scooter(1, "Electric", 40, 20);
-        let a = u.hireScooter(s);
-        expect(a).toBeFalsy();
+        
+        expect(u.hireScooter(s)).toBe(1);
+        
 
     });
 
@@ -26,11 +27,15 @@ describe('User', function () { //TO FIX
     test('User can return scooter', () => {
         const u = new User("bev", 24, "b@b.com", Math.random());
         const s = new Scooter(1, "Electric", 40, 20);
-        expect(u.returnScooter(s)).toBeFalsy();
+       
+        
+        expect(u.returnScooter(s)).toBeTruthy();
+        
         // return u.returnScooter().then(()=>{
         //     expect(()=> u.takePayment().toBeTruthy());
         // })
     })
+
 
     //see if user can submit feedback
     test('User can submit feedback', async () => {
