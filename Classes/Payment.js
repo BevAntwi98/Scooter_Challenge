@@ -12,22 +12,12 @@ class Payment {
     };
 
     async verifyBankDetails() { //timeout function
-        if (Number.isInteger(this.cardNum)) {
-            await new Promise(resolve => setTimeout(resolve, 3000)); // wait 3 seconds
-            console.log("Card details entered");
-
-        } else {
-            throw new Error("You have not entered a string of numbers") //error 
-        }
+        // abstract method
     };
 
     takePayment() { //when user return scooter to charging station
-        //abstract method
-        let a = console.log("Thank you! A payment of £4 has been taken :D ");  // £4 is random. will return to implement function that calculates cost :D
-        return a;
+        //abstract method   
     };
-
-
 
 }
 

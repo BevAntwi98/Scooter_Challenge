@@ -25,6 +25,14 @@ describe('Scooter', () => {
         expect(s.isAvailable(1)).toBeFalsy();
     });
 
+    //scooter is not damaged
+    test('Scooter is not fully charged', () => {
+        const s = new Scooter(1, "Electric", 80, 32);
+        let a = s.isDamaged()
+        expect(a).toBeTruthy;
+    });
+
+
 
 
 

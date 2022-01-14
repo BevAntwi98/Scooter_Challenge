@@ -11,19 +11,22 @@ class Scooter {
         this.type = type;
         this.chargePercentage = chargePercentage;
         this.maxRange = maxRange;
-        this.damage;
+        this.damage=false;
     }
 
-    isDamaged() {
-        console.log("Report to maintenence");
-        return this.damage = true;
+    isDamaged() {     
+        if(this.damage=true){
+            console.log(`Scooter ${this.scooter_id} has been reported to maintenence`);
+            return true;
+        }else{
+            return false;
+        }
     }
 
     isAvailable(scooter_id) {
 
         let d = new Date();
         d.getDate;
-
 
         //    error in case its not available
         if (this.chargePercentage !== 100 ) {

@@ -1,4 +1,4 @@
-// const Register = require('./Register')
+const account = require('./Account')
 class Guest {
 
     name;
@@ -16,12 +16,8 @@ class Guest {
     }
 
     verifyAge() {  //verify age before proceeding to finishing signUp
-        if (this.age < 18) {
-            return false; // console.log(`Sorry ${this.name}, you are too young to use this service.`); //change to boolean
-        }
-        else {
-            return true; 
-        }
+
+        return this.age>18;
     }
 
     signUp() { //dont pass anything
@@ -31,12 +27,11 @@ class Guest {
         //  console.log(`${this.name} has registered successfully. you can now start using the app`)     
     }
 }
-
 module.exports = Guest;
 
 // // TESTING MY CODE
 // const A = new Guest("Bev", 24, "64 zoo lane", "a@hotmail.com");
-// A.verifyAge()
+
 
 // const b = new Guest("toni",16, "251 southwark", "t@t.com")
 // const c = new Guest("abi",56, "251 southwark", "t@t.com")

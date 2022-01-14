@@ -1,18 +1,13 @@
 const Guest = require('./Guest');
 const scooter = require('./Scooter');
-const Payment = require('./Payment');
-const Bank = require('./Bank');
-const Google = require('./GooglePay');
+const Scooter = require('./Scooter');
 const GooglePay = require('./GooglePay');
 const Station = require('./Station');
-const prompt = require('prompt-sync')({ sigint: true });
-
 
 
 class User extends Guest {
 
     unique_id;
-    
 
     constructor(name, age, address, email, unique_id) {
         super(name, age, address, email)
@@ -22,31 +17,22 @@ class User extends Guest {
 
     hireScooter(scooter) { // execute a function that start counting seconds until they return scooter || seaarch js apply
         // pass in scooter 
-       
+        scooter = new Scooter(1, "Electric", 100, 32);
         // return scooter.set.isavailable
-        return scooter.isAvailable();
-
-       
+        return scooter.isAvailable(1);
     }
 
-    returnScooter(scooter) { //pass in take payment  //TOFIX
-        // pass in scooter
-        // get timestamp for ending session
+    returnScooter(station, google) { //pass in take payment  //TOFIX
+        
+        station=new Station("ChargingStation");// pass in scooter
+        google = new GooglePay("BevGoogle", "PhonePay");
 
-        let d = new Date();
+        let d = new Date(); // get timestamp for ending session
         d.getDate;
-
-      
-        // returns GooglePay method take paymewnt
-
+        
         console.log("Session has ended at " + d);
-        return st.chargeScooter().then(() => g.verifyBankDetails().then(() => g.takePayment())); //chaining promises :D not sure how i did this but it works
-    }
-
-    deleteAccount() { //if else
-        Guest.register.pop(); //removes persons account by name
-        console.log(`${this.name} has been removed`);
-        return this.register; //returns the current stack
+        return station.chargeScooter().then(() => google.verifyBankDetails().then(() => google.takePayment()));
+        //return st.chargeScooter().then(() => g.verifyBankDetails().then(() => g.takePayment())); //chaining promises :D not sure how i did this but it works
     }
 
 
@@ -66,18 +52,8 @@ module.exports = User
 
 // TESTING MY CODE
 const A = new User("bev", 22, "64 zoo lane", "a@A.com", 111)
-const e = new User("ww", 22, "64 zoo lane", "a@A.com", 111)
-const c = new User("ee", 22, "64 zoo lane", "a@A.com", 111)
-const d = new User("rr", 22, "64 zoo lane", "a@A.com", 111)
-// // A.submitFeedback()
+ // A.submitFeedback()
 
-const s = new scooter(1, "electric", 100, 32); //if a scooter object is created with less than 100% then isAvailable() method will console.log error
-// // A.hireScooter()
-
-const g = new GooglePay("Scooter Hire", "GooglePay");
-
-const p = new Payment("payment", "payment");
-
-const st = new Station("station1");
+A.hireScooter();
 // A.returnScooter();
 

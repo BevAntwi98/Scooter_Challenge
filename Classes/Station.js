@@ -10,11 +10,8 @@ class Station {
 
     async chargeScooter(){ //function to charge scooter. maybe add async / loading func
         console.log('Starting charge');
-
         await new Promise(resolve => setTimeout(resolve, 2000)); // wait 2 seconds
-
         // console.log('Charge complete');   
-
     }
 
 

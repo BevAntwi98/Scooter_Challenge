@@ -1,10 +1,10 @@
-const PromptSync = require('prompt-sync');
+
 const GooglePay = require('../Classes/GooglePay');
 const Scooter = require('../Classes/Scooter');
 const User = require('../Classes/User');
-const prompt = require('prompt-sync')({ sigint: true });
 
-describe('User', function () {
+
+describe('User', function () { //TO FIX
 
     // see if user can hire scooter
     test('User can hire scooter', () => {
@@ -32,14 +32,6 @@ describe('User', function () {
         // })
     })
 
-
-    // see if user can delete account
-    test('User can delete account', () => {
-        const u = new User("bev", 24, "b@b.com", Math.random());
-        u.deleteAccount("bev");
-        expect.arrayContaining([]);
-    });
-
     //see if user can submit feedback
     test('User can submit feedback', async () => {
         const u = new User("bev", 24, "b@b.com", Math.random());
@@ -47,10 +39,6 @@ describe('User', function () {
         await u.submitFeedback();
         console.log("Feedback submitted");
 
- 
-
     });
-
-
 
 })
