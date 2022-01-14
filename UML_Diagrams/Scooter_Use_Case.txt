@@ -15,10 +15,10 @@ actor "Maintenence" as G
 
 rectangle System {
     usecase "Sign Up" as UC0
-    usecase "Launch App" as UC1
+
     usecase "Create an account" as UC2
     usecase "Verify user's age" as UC3
-    usecase "Enter bank details" as UC4
+
     usecase "Enter address" as UC5
     usecase "Rent Scooter" as UC6
     usecase "Return Scooter" as UC7
@@ -34,10 +34,10 @@ rectangle Charging_Station {
 }
 
 Z --> UC0
-A --> UC1
+
 A --> UC2
 A --> UC3
-A --> UC4
+
 A --> UC5
 A --> UC6
 A --> UC7

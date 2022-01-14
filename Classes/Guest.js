@@ -5,6 +5,7 @@ class Guest {
     age;
     address;
     email;
+    // static register[]
 
     constructor(name, age, address, email) {
         this.name = name;
@@ -16,23 +17,19 @@ class Guest {
 
     verifyAge() {  //verify age before proceeding to finishing signUp
         if (this.age < 18) {
-            // console.log(`Sorry ${this.name}, you are too young to use this service.`); //change to boolean
-            return this.age=false;
+            return false; // console.log(`Sorry ${this.name}, you are too young to use this service.`); //change to boolean
         }
         else {
-            return this.signUp(this.name); //if of age, user will be signed up via signUp method
+            return true; 
         }
     }
 
-    signUp(name) {
-        this.register.push(name);
+    signUp() { //dont pass anything
+        this.register.push();
+        // this.isRegistered=true;
+        // Guest.register.push(this);
         //  console.log(`${this.name} has registered successfully. you can now start using the app`)     
     }
-
-
-    // viewGuests() {
-    //     console.log(this.register);
-    // }
 }
 
 module.exports = Guest;

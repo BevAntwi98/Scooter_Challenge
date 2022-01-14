@@ -2,13 +2,12 @@
 
 title Electric Scooter - Class Diagram
 
-class Hire_App{
+class Account{
 
 ..Encrypted..
 #profilePassword:String
 ..Methods..
-verifyAge()
-approved()
+deleteAccount()
 
 }
 
@@ -19,6 +18,7 @@ class Guest{
 -address: string
 -email: string
 ..Methods..
+verifyAge()
 signUp()
 }
 
@@ -31,9 +31,8 @@ class User {
 -email: string
 -unique_id: number
 ..Methods..
--hireScooter()
++hireScooter()
 +returnScooter()
--deleteAccount()
 +submitFeedback()
 }
 
@@ -78,18 +77,24 @@ class CardIssuer{
 ..Methods..
 takePayment()
 }
+class Maintenence{
+..Properties..
+id: number
+..Methods..
+fixScooter();
+}
 
 
 
-Hire_App "1" -- "many" User 
+Account "1" -- "1" User 
 User "1" --> "1" Scooter: can use
 Scooter "1" --> "many" Charging_Station: can be dropped off at
 
 Charging_Station --Scooter
-Guest <|-- User
+Guest --|> User
 Payment<|--GooglePay
 Payment<|--Bank
 Payment<|--CardIssuer
-
-Hire_App -- Payment
+Account -- Payment
+User -- Maintenence
 @enduml
